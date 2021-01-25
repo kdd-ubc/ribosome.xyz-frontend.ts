@@ -5,24 +5,22 @@
 
 ![homepage](src/static/readme/ribosome-home.png)
 
+**Ribosome Structures**
+This database presents a catalogue of all the ribosome structures deposited to the RCSB/PDB. These structures are processed here for an easy search and access of the structures and their components (listed below). Various modules are also available to process and analyze the structures.
+
 **Ribosomal Proteins**
 
-In order to enable comprehensive comparison of structures deposited by the community in to the RCSB/PDB, a common ontology is required for comparing proteins and the data associated with them across multiple files (Fig. 1). One solution is to refer to Uniprot accession codes and/or InterPro families of the proteins, but the naming of ribosomal proteins presents a specific obstacle for data integration. Due to historical contingency, many ribosomal proteins from different species were originally assigned the same name, despite being often unrelated in structure and function. To eliminate confusion, a nomenclature has been proposed to standardize known ribosomal protein names and provide a framework for novel ones. While this nomenclature has been mostly adopted in recent structural studies, PFAM families and UniProt database as well as PDB still contain numerous references to earlier naming systems.
-
+To enable comprehensive comparison of structures deposited by the community in to the RCSB/PDB, we have provided a common ontology that allows to get access to the structure of ribosomal proteins across multiple files, by refering to their standard names (Fig. 1). This ontology is notably based on a nomenclature that was recently adopted for naming ribosomal proteins.
 
 **Ligands, Antibiotics and Small Molecules**
 
-Crystallographic models frequently feature ligands and small molecules that are not intrinsic to the ribosome but are still of great interest whether due to their pharmacological, evolutionary or other import. We provide a residue-level catalogu of ligands, small molecules and antibiotics and their physical neighborhood as well as tools to search for similar molecules across other structures in the database.
+We provide a residue-level catalogue of ligands, small molecules and antibiotics that are solved with ribosome structures. Additional tools allow to visualize their physical neighborhood and search for similar molecules across other structures in the database.
 
 
 **Ribosome Exit Tunnel**
 
-Ribosome exit tunnel and the peptidyl-transferase center are of particular interest in the exploration of the translation process and evolutionary modifications in different species. We gather a selection of exit-tunnel models from the available structures in the hopes of further extending this dataset in the future.
-
-
-The constitution of the exit tunnel is of interest for evolutionary, physio-chemical and pharmacological reasons. We provide a mechanism to export some preliminary data about the walls of the exit tunnel as well cylinder-centerline of the tunnel as is caputured in a given model.
-
-Three main features are provided at the moment that characterize the tunnel walls:
+The database contains ribosome exit-tunnel models from some selected structures in the current version, which will be extended to more structures in the future.
+Data export is available, focusing on the three following main features:
 
 1. Residue profile of the RPs that interface with the tunnel.
 (Each protein is identified by its new nomenclature (ex. uL4) where is possible and can thus be compared against
@@ -35,14 +33,14 @@ homologous chains in other structures.The in-chain IDs of the tunnel-interfacing
 
 **Ribosomal RNA, tRNA and mRNA**
 
-A centralized resource to search, access and compare individual rRNA strands across a variety of structures
+RNA components, including ribosomal RNA's, but also tRNA's and mRNA's solved with the ribosomes are caccessible and can be searched through all structures.
 
 
 **Current Limitations/Work in progress**
 
-Due to the additional peculiarities of the mitochonodrial ribosome structrue, the current version of the database makes no distinction between cystosolic and mitochondiral, chloroplast ribosomes. Hence, the corresponding nomenclature classes(i.e. uL4m or uL4c) are also absent from the proteins repository.
+Due to the additional peculiarities of the mitochonodrial ribosome structrue, the current version of the database makes no distinction between cystosolic and mitochondiral, chloroplast ribosomes. Hence, the corresponding nomenclature classes (i.e. uL4m or uL4c) are also absent from the proteins repository.
 
-The species classes of certain structures are somewhat ambiguous due to the fact that PDB marks individual proteins, not whole structures as belongign to a certain species and hence if some structures contain proteins from multiple species, multiple species figure in this structure 's profile(ex.)
+The species classes of certain structures are somewhat ambiguous due to the fact that PDB marks individual proteins, not whole structures as belonging to a certain species. if some structures contain proteins from multiple species, multiple species figure in this structure 's profile(ex.)
 
 1. Classification of structures according to following charateristics is desirable, but is not yet implemneted:
     -  Stages of translation cycle
@@ -89,11 +87,13 @@ We are also ignoring ions(most have not been parsed and listed) for the most par
 # TOOLS/ANALYTICS SECTION
 
 
-# RP Classification
+# RP Classification and analytics
 
 [/classify](https://www.ribosome.xyz/classify)
 
 The absence of standardized naming scheme for ribosomal proteins has been an obstacle to investigation of compositional heterogeneity. We implement the recently proposed nomenclature in code and with reference to sequence-derived protein families (PFAM, Interpro).This makes possible investigation of protein-classes across structures and species.
+
+This part should include a way to access histogram of distance to surface (cf. Xinpei). The histogram can allow to classify proteins according to their degree of penetration. Their are other ways to identify proteins according to their spatial localization. Specific regions can be highlighted, i.e. inter subunit, elongation factor, Another module could be 3D spatial clustering (see if an inputed list of proteins forms a cluster, using DBscan algorithm for example)
 
 
 [ I will also include a downloadable table of mappings between PFAM families and Ban Classes here.]
@@ -150,5 +150,5 @@ Quantitative methods have been developed for the analysis of the ribosome exit t
 
 [ /rpalign ](https://ribosome.xyz/rpalign)
 
-
+The user can call for ribosomal components from different structures and get a 3D alignment of them. 
 Not sure what to say here. Will stick a molecular viewer at some point to visualize superimposed chains on the fly.
